@@ -20,9 +20,10 @@ function show() {
             <br />
             Verdi:
             <input type="number" min="1" max="10" oninput="inputValue = this.value" />
-            <button>Legg til stolpe</button>
+            <button onclick="addPole()">Legg til stolpe</button>
             <button disabled>Endre valgt stolpe</button><br />
-            <button disabled>Fjerne valgt stolpe</button>
+            <button disabled>Fjerne valgt stolpe</button><br/>
+            <p id="errorTekst"></p>
             `;
 }
 
@@ -45,3 +46,13 @@ function calcColor(min, max, val) {
 }
 
     // controller (ingenting her ennå)
+
+function addPole() {
+    if (inputValue > 10 || inputValue < 1) {
+        alert(inputValue + " er en ugyldig verdig, venligst velg en verdi fra 1-10.");
+    } else {
+        numbers.push(inputValue);
+    }
+    show();
+
+}
