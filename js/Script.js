@@ -24,7 +24,8 @@ function show() {
             <button onclick="addPole()">Legg til stolpe</button>
             <button ${chosenBar != null ? '' : 'disabled'} onclick="changePole()">Endre valgt stolpe</button><br />
             <button ${chosenBar != null ? '' : 'disabled'} onclick="removePole()">Fjerne valgt stolpe</button><br/>
-            <div id="errorTekst">${errorTekst}</div>
+            <div id="errorTekst">${errorTekst}</div> <br/> <br/>
+            <a href="unitTest.html" onclick="window.location.href = unitTest.html">Unit Test</a>
             `;
 }
 

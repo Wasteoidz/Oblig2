@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.12.0.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.12.0.js"></script>
+    <script src="js/controller.js"></script>
+    <script>
+        function show() { }
+
+        let numbers = [7, 3, 1, 5, 8];
+        let chosenBar; 
+        let inputValue ;
+
+        QUnit.module('add', function () {
+
+            QUnit.test('should delete pole', function (assert) {
+                numbers = [7, 3, 1, 5, 8];
+                targetPole(1);
+                removePole();
+                assert.deepEqual(numbers, [7, 1, 5, 8]);
+            });
+
+            QUnit.test('should add pole', function (assert) {
+                numbers = [7, 3, 1, 5, 8];
+                inputValue = 4;
+                addPole();
+                assert.deepEqual(numbers, [7, 3, 1, 5, 8, 4]);
+            });
+
+            QUnit.test('should change pole value', function (assert) {
+                numbers = [7, 3, 1, 5, 8];
+                targetPole(2);
+                inputValue = 4;
+                changePole();
+                assert.deepEqual(numbers, [7, 3, 4, 5, 8,]);
+            });
+
+            QUnit.test('should change pole', function (assert) {
+                targetPole(1);
+                targetPole(3);
+                let actuall = chosenBar;
+                let expected = 3;
+                assert.deepEqual(actuall, expected);
+            });
+
+            QUnit.test('should deselect pole', function (assert) {
+                targetPole(1);
+                targetPole(1);
+                let actuall = chosenBar;
+                let expected = null;
+                assert.deepEqual(actuall, expected);
+            });
+        });
+
+    </script>
+</body>
+</html>

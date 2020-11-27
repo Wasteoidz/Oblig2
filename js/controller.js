@@ -20,7 +20,7 @@ function targetPole(pole) {
 
 function changePole() {
     if (inputValue > 10 || inputValue < 1) {
-        errorTekst = 'Du har valgt en ugyldig verdig, venligst velg en verdi fra 1-10.';
+        errorTekst = 'Du har valgt en ugyldig verdi, venligst velg en verdi fra 1-10.';
     } else {
         numbers[chosenBar] = inputValue;
         errorTekst = '';
@@ -28,8 +28,6 @@ function changePole() {
     }
     show();
 }
-
-
 
 function removePole() {
     numbers.splice(chosenBar, 1);
