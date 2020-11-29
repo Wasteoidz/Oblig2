@@ -50,6 +50,7 @@
             });
 
             QUnit.test('should deselect pole', function (assert) {
+                chosenBar = null;
                 targetPole(1);
                 targetPole(1);
                 let actuall = chosenBar;
